@@ -1,0 +1,42 @@
+
+   
+version: "3"
+services:
+  bot: 
+    build: bot
+    ports: 
+      - 8000:8000
+    networks:
+      botfast:
+        ipv4_address: 172.19.0.44
+  fastapi:
+    build: fastapi
+    environment:
+    - SPOTIPY_CLIENT_ID='464750f6049d4fb2936945675bff2c76'
+    - SPOTIPY_CLIENT_SECRET='937c1beccef0432d9e382da9547d4684'
+    - SECRET_KEY='randomsecretstring'
+    ports:
+      - 8080:8080
+    restart: always
+    networks:
+      botfast:
+        ipv4_address: 172.19.0.45
+  flask:
+    build: flask
+    environment:
+    - SPOTIPY_CLIENT_ID='e5cfd035b45a46cbbda80c02899eba7b'
+    - SPOTIPY_CLIENT_SECRET='1174d71765664938b5fcce1a2651d635'
+    - SECRET_KEY='randomsecretstring'
+    ports:
+      - 80:80
+    networks:
+      botfast:
+        ipv4_address: 172.19.0.46
+
+networks:
+  botfast:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.0.0/24
