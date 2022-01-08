@@ -6,6 +6,10 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
+ENV SPOTIPY_CLIENT_ID='464750f6049d4fb2936945675bff2c76'
+ENV SPOTIPY_CLIENT_SECRET='937c1beccef0432d9e382da9547d4684'
+ENV SECRET_KEY='randomsecretstring'
+
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
