@@ -42,7 +42,7 @@ def display(recommendations, covers):
                     <p>{track['name']} by {track['artists'][0]['name']}</p>
                 </div>
                 <div class = 'col-md-4'>
-                    <a href = "{track['external_urls']['spotify']}" target = '_blank'><button class = 'button'>Play It</button></a>
+                    <a href = "{track['external_urls']['spotify']}" target = '_blank'><button class = 'button'>Слушать</button></a>
                 </div>
             </div>
         '''

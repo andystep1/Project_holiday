@@ -4,4 +4,4 @@ from wtforms.validators import DataRequired
 
 class SearchForm(FlaskForm):
     search = StringField("", validators = [DataRequired()])
-    submit = SubmitField("Get recommendations")
+    submit = SubmitField("Получить Рекомендации")
